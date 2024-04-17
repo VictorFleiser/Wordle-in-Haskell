@@ -19,12 +19,11 @@ maxGuesses = 6
 -- print_intro prints the introduction to the game
 print_intro :: IO ()
 print_intro = do
-  putStrLn "Guess the word!"
+  putStrLn "\n"
   putStrLn ("You have " ++ show maxGuesses ++ " guesses to guess the word.")
   putStrLn "The word is a 5-letter word, picked from a list of common English words (should be the same as the official Wordle word list)."
   putStrLn "Enter a guess after each prompt."
   putStrLn "Good luck!"
-  putStrLn ""
 
 -- load_wordlist loads a list of words from a file
 load_wordlist :: String -> IO [String]
@@ -138,6 +137,6 @@ main = do
   let state = initialState wordlist answer -- initialize the game state
 
   -- print answer for debugging
-  putStrLn ( "FOR DEBUGING : Answer: " ++ toUpper answer)
+  -- putStrLn ( "FOR DEBUGING : Answer: " ++ toUpper answer)
 
   gameLoop state -- start the game loop
